@@ -1,0 +1,32 @@
+INTERFACES = {
+    'clients':
+    {
+        'rest-MLI':
+        {
+            'address':'localhost',
+            'port': 8011,
+            'ssl': False,
+            'timeout': 10,
+            'vi_id': '1',
+        },
+        'vrmapPresence':
+        {
+            'iorName': '/opt/vrm/var/gmpls/vrm_presence.ior',
+        },
+        'vrmapNotifications':
+        {
+            'iorName': '/opt/vrm/var/gmpls/vrm_notif.ior',
+        },
+        'gmplsCtrlInfo':
+        {
+            'IPs': ['150.254.160.135', '150.254.160.136', '150.254.160.137', '150.254.160.138'],
+            'port': 7010,
+        },
+        #'AaiAuthentication':
+        #{
+        #    'iorName': '/tmp/AaiServer.ior',
+        #    'user': 'Canh',
+        #    'passwd': '123456',
+        #},
+    },
+}

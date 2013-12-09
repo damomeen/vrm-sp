@@ -1,0 +1,42 @@
+//
+//  This file is part of gmpls-nextworks
+//
+//  Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011 Nextworks s.r.l.
+//
+//  @LICENSE_BEGIN@
+//  @LICENSE_END@
+//
+//  Giacomo Bernini       <g DOT bernini AT nextworks DOT it>
+//  Gino Carrozzo         <g DOT carrozzo AT nextworks DOT it>
+//  Nicola Ciulli         <n DOT ciulli AT nextworks DOT it>
+//  Giada Landi           <g DOT landi AT nextworks DOT it>
+//  Roberto Monno         <r DOT monno AT nextworks DOT it>
+//  Francesco Salvestrini <f DOT salvestrini AT nextworks DOT it>
+//
+
+#ifndef VRM_COMMON_IDL
+#define VRM_COMMON_IDL
+
+#include "types.idl"
+#include "gmpls.idl"
+
+module VRM {
+
+        enum vrResultCode {
+                VR_RESULT_SUCCESS,
+                VR_RESULT_FAILURE
+        };
+
+        enum vrErrorCode {
+                VR_ERROR_NONE,
+                VR_ERROR_NOTAUTHORIZED,
+                VR_ERROR_PARAMERROR,
+                VR_ERROR_NOTCAPABLE,
+                VR_ERROR_BUSYRESOURCES,
+                VR_ERROR_INTERNALERROR,
+                VR_ERROR_GENERICERROR
+        };
+
+};
+
+#endif

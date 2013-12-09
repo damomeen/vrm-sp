@@ -1,0 +1,22 @@
+#!/bin/bash
+# -*- sh -*-
+
+#
+#
+# (C) 2011 PSNC
+#
+# Authors:
+#     Damian Parniewicz (PSNC) <damianp_at_man.poznan.pl>
+#
+omniidl -bpython idls/types.idl
+omniidl -bpython idls/gmpls.idl
+omniidl -bpython idls/vrmCommon.idl
+omniidl -bpython idls/vrmGeneric.idl
+omniidl -bpython idls/vrmSpecific.idl
+omniidl -bpython idls/SecGateway2.idl
+
+if [ ! -e vrmsp.conf ]
+then
+    cp vrmsp.conf.sample vrmsp.conf
+    echo "File vrmsp.conf created"
+fi

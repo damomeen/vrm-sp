@@ -1,0 +1,55 @@
+//
+//  This file is part of gmpls-nextworks
+//
+//  Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011 Nextworks s.r.l.
+//
+//  @LICENSE_BEGIN@
+//  @LICENSE_END@
+//
+//  Giacomo Bernini       <g DOT bernini AT nextworks DOT it>
+//  Gino Carrozzo         <g DOT carrozzo AT nextworks DOT it>
+//  Nicola Ciulli         <n DOT ciulli AT nextworks DOT it>
+//  Giada Landi           <g DOT landi AT nextworks DOT it>
+//  Roberto Monno         <r DOT monno AT nextworks DOT it>
+//  Francesco Salvestrini <f DOT salvestrini AT nextworks DOT it>
+//
+
+#ifndef VRM_GENERIC_IDL
+#define VRM_GENERIC_IDL
+
+#include "types.idl"
+#include "gmpls.idl"
+#include "vrmCommon.idl"
+#include "vrmSpecific.idl"
+
+module VRM_AP {
+
+	exception NotCapable    { string  what; };
+	exception InternalError { string  what; };
+        exception GenericError  { string  what; };
+
+        interface Presence {
+                void
+                register(in string              spName,
+                         in Types::uint32       maxTimeout,
+                         in VRM_SP::Config      spConfigRef,
+                         in VRM_SP::VR_Commands spVrCommandRef)
+                        raises(Types::InternalProblems, NotCapable);
+
+                void
+                unregister(in string spName)
+                        raises(Types::InternalProblems);
+        };
+
+        interface Notifications {
+                void
+                vrResult(in Types::uint32      handle,
+                         in VRM::vrResultCode  result,
+                         in VRM::vrErrorCode   error)
+                        raises (InternalError,
+                                GenericError);
+
+        };
+};
+
+#endif
